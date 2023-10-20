@@ -4,22 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Nomina {
-    protected String tipoEmpleado;
-    protected List<Empleado> empleadosNomina=new ArrayList<>();
+    private List<Empleado> empleadosNomina=new ArrayList<>();
 
-    public Nomina(String tipoEmpleado) {
-        this.tipoEmpleado = tipoEmpleado;
+    public void calcularNomina() {
+        for (Empleado empleado : empleadosNomina) {
+            System.out.println(empleado);
+            if (empleado instanceof Vendedor) {
+                System.out.println("Comision: " + ((Vendedor) empleado).calcularComision());
+            }
+            System.out.println("Nomina: " + empleado.calcularSalario() + "\n");
+        }
     }
 
-    protected void calcularNomina(){
+    public void listarDirectos() {
+        System.out.println("La lista de directos es: \n");
+        for (Empleado empleado : empleadosNomina) {
+            if (empleado instanceof EmpleadoDirecto) {
+                System.out.println(empleado);
+            }
+        }
     }
 
-    protected void listarDirectos(){
-
+    public void listarFreelancers() {
+        System.out.println("\nLa lista de freelancers es: \n");
+        for (Empleado empleado : empleadosNomina) {
+            if (empleado instanceof EmpleadoFreelance) {
+                System.out.println(empleado);
+            }
+        }
     }
 
-    protected void listarFreelancers(){
-
+    public List<Empleado> getEmpleadosNomina() {
+        return empleadosNomina;
     }
-
 }

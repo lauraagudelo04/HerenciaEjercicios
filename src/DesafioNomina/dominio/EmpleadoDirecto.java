@@ -23,5 +23,11 @@ public class EmpleadoDirecto extends Empleado{
         return calcularPension()+calcularSalud();
     }
 
-
+    @Override
+    public String toString() {
+        return "EmpleadoDirecto{" +
+                "salario=" + salario +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

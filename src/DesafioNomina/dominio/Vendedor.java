@@ -24,4 +24,13 @@ public class Vendedor extends EmpleadoDirecto {
 
         return (salarioMenosAportes+calcularComision());
     }
+
+    @Override
+    public String toString() {
+        return "Vendedor{" +
+                "ventasDelMes=" + ventasDelMes +
+                ", salario=" + salario +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

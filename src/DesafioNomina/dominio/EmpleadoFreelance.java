@@ -14,4 +14,12 @@ public class EmpleadoFreelance extends Empleado{
         return horasTrabajadas*valorHora;
     }
 
+    @Override
+    public String toString() {
+        return "EmpleadoFreelance{" +
+                "valorHora=" + valorHora +
+                ", horasTrabajadas=" + horasTrabajadas +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }
