@@ -34,6 +34,15 @@ public class Nomina {
         }
     }
 
+    public void listarPromotores(){
+        System.out.println("\nLa lista de promotores es: \n");
+        for(Empleado empleado: empleadosNomina){
+            if (empleado instanceof Promotor){
+                System.out.println(empleado);
+            }
+        }
+    }
+
     public List<Empleado> getEmpleadosNomina() {
         return empleadosNomina;
     }

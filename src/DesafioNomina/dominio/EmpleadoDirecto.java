@@ -3,6 +3,7 @@ package DesafioNomina.dominio;
 public class EmpleadoDirecto extends Empleado{
     protected long salario;
 
+
     public EmpleadoDirecto(String nombre,long salario) {
         super(nombre);
         this.salario=salario;

@@ -15,6 +15,8 @@ public class AppNomina {
         Empleado empleado3=new Vendedor("Claudia",1_380_000,35_989_000);
         Empleado empleado4=new EmpleadoFreelance("Johanna",71_000,89);
         Empleado empleado5=new EmpleadoFreelance("Gustavo",42_500,65);
+        Empleado empleado6=new Promotor("Pedro",2000,200,77);
+
 
 
         nomina.getEmpleadosNomina().add(empleado);
@@ -23,11 +25,15 @@ public class AppNomina {
         nomina.getEmpleadosNomina().add(empleado3);
         nomina.getEmpleadosNomina().add(empleado4);
         nomina.getEmpleadosNomina().add(empleado5);
+        nomina.getEmpleadosNomina().add(empleado6);
+
 
         System.out.println();
         nomina.calcularNomina();
         nomina.listarDirectos();
         nomina.listarFreelancers();
+        nomina.listarPromotores();
+
 
     }
 }

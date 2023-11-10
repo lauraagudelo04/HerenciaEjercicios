@@ -3,6 +3,7 @@ package DesafioNomina.dominio;
 
 public class Vendedor extends EmpleadoDirecto {
     protected long ventasDelMes;
+    public static final int VALOR_PORCENTAJE=1_500_000;
 
     public Vendedor(String nombre, long salario,long ventasDelMes) {
         super(nombre, salario);
@@ -10,7 +11,7 @@ public class Vendedor extends EmpleadoDirecto {
     }
 
     protected long calcularComision(){
-        if(this.salario<=1_500_000){
+        if(this.salario<=VALOR_PORCENTAJE){
             return this.ventasDelMes*45/1000;
         }
         else{
@@ -20,9 +21,7 @@ public class Vendedor extends EmpleadoDirecto {
 
     @Override
     protected long calcularSalario() {
-        long salarioMenosAportes=this.salario-calcularAporte();
-
-        return (salarioMenosAportes+calcularComision());
+        return (super.calcularSalario()+calcularComision());
     }
 
     @Override
